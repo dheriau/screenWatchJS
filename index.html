@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alışveriş WEb Site Mağazası</title>
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+
+   
+
+
+
+    <section class="uni-content">
+
+      <div class="d-flex justify-content-end" style="position: relative;">
+        <i class="fa-solid fa-basket-shopping" style="font-size: 25px;"></i>
+        <span style="position: absolute;
+        top: -9px;
+        right: -3px; color:red" id="basket-count">0</span>
+      </div>
+       
+        <div class="item left">
+            <figure>
+        <img src="./assets/images/saatler/saat-1.webp"
+        id="saat-img"
+        style="width: 300px; height: 300px;" alt=""></figure>
+        <div class="book__detail">
+   <span class="fos gray fs-5" id="saat-adi">Seiko 5 SNK357K1 Otomatik Erkek Kol Saati
+  </span><br>
+   <span class="fs-4 fw-bold"></span><br>
+   <span class="book__star-rate">
+     <i class="bi bi-star-fill active"></i>
+     <i class="bi bi-star-fill"></i>
+     <i class="bi bi-star-fill"></i>
+     <i class="bi bi-star-fill"></i>
+     <i class="bi bi-star-fill"></i>
+     <i class="bi bi-star"></i><br><br>
+     <span class="gray">250 reviews</span>
+   </span>
+
+   
+  <div>
+    <span class="black fw-bold fs-4  me-2" id="saat-fiyati">2.875,59₺</span>
+    <span class="fs-4 fw-bold old__price" id="eski-saat-fiyati">3.875,59₺</span>
+  </div>
+
+
+  <div class="div-button-conteiner">
+    <button class="button1"><span style="color:#99A4BA; font-weight: bold;">Marka</span> <br>Casio</button>
+  <button class="button2"><span style="color:#99A4BA; font-weight: bold;">Kordon Materyali</span> <br>Deri</button>
+  <button class="button3"><span style="color:#99A4BA; font-weight: bold;">Çap</span> <br>25</button>
+  <button class="button4">Kasa Rengi <br> Gri</button>
+  <button class="button4">Ekran Tipi <br> Analog</button>
+   </div>
+
+
+  <div class="d-flex gap-2">
+    <button class="btn btn-primary" id="saat-1" data-img="saat-1.webp" >
+      Seiko 5 SNK357K1
+    </button>
+  
+    
+    <button class="btn btn-primary" id="saat-2" data-img="saat-2.webp">
+      Seiko 4 SNK357K1
+    </button>
+  </div>
+
+
+  <button class="btn__purple" id="sepete-ekle">SEPETE EKLE</button>
+  </div>
+  <hr width="50%" style="border: 1px solid #BBC3C7;">
+ 
+</div>
+</div>
+
+            <div class="item right">
+                <figure><br><img src="" alt=""></figure>
+                <h3 class="sub-title"><br></h3>
+                <p></p>
+                <h3 class="sub-title"><br></h3>
+                <p></p>
+                <h3 class="sub-title"><br></h3>
+                <p></p>
+            </div>
+        </div>
+    </section>
+    </body>
+
+</section>
+    <script
+      type="text/javascript"
+      src="assets/bootstrap/js/bootstrap.min.js"
+    ></script>
+    <script type="text/javascript" src="app.js"></script>
+
+    <script>
+
+        /**
+         * saat 1 idsine tıklandığında yapılacaklar
+         */
+        document.getElementById('saat-1')
+        .addEventListener('click', function() {
+         // saat-img idsinin src kısmındaki resim adresi değişiyor
+         let saat_resmi =  "./assets/images/saatler/saat-1.webp"
+         let saat_adi = "Seiko 5 SNK357K1 Otomatik Erkek Kol Saati";
+         let saat_fiyati = '2.875,59₺';
+         let eskiSaatFiyati = '3.875,59₺'
+
+          document.getElementById('saat-img').src = saat_resmi
+          document.getElementById('saat-adi').innerHTML = saat_adi;
+          document.getElementById('saat-fiyati').innerHTML = saat_fiyati;
+          document.getElementById('eski-saat-fiyati').innerHTML = eskiSaatFiyati;
+
+        })
+        
+        /**
+         * saat 2 idsine tıklandığında yapılacaklar
+         */
+        document.getElementById('saat-2')
+        .addEventListener('click', function() {
+          // saat-img idsinin src kısmındaki resim adresi değişiyor
+          let saat_resmi =   "./assets/images/saatler/saat-2.webp"
+          let saat_adi = "Casio Edifice EFV-540D-2AVUDF Erkek Kol Saati";
+          let saat_fiyati = '3.875,59₺';
+          let eskiSaatFiyati = '4.875,59₺'
+          document.getElementById('saat-img').src = saat_resmi;
+          document.getElementById('saat-adi').innerHTML = saat_adi
+          document.getElementById('saat-fiyati').innerHTML = saat_fiyati;
+          document.getElementById('eski-saat-fiyati').innerHTML = eskiSaatFiyati
+          
+        })
+
+
+        let sepet_sayisi = 0;
+
+        document.getElementById('sepete-ekle').addEventListener('click',
+        function() {
+
+          // let onaylama = confirm('Sepete eklemek istediğinize emin misiniz ?')
+
+          // if(onaylama == true) {
+          // // sepet_sayisi = sepet_sayisi + 1
+          // sepet_sayisi++;
+          // document.getElementById('basket-count').innerHTML = sepet_sayisi;
+
+          // }
+
+          sepet_sayisi++;
+          document.getElementById('basket-count').innerHTML = sepet_sayisi;
+
+
+        }
+        )
+
+        // basket-count
+    </script>
+  </body>
+</html>
